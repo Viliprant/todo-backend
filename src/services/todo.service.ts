@@ -13,3 +13,7 @@ export const addTodo = (title: string): Todo => {
   todos.push(newTodo);
   return newTodo;
 };
+
+export const resetTodos = (): void => {
+  todos = [];
+};
