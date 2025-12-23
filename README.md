@@ -1,15 +1,17 @@
 # Todo Backend
 
 ## Description
+
 Projet backend en **Node.js + TypeScript + Express**, implémentant un système de gestion de TODOs.  
 Ce projet est conçu pour montrer la structuration d’une API REST moderne, avec séparation **Controller / Service**, tests unitaires et d’intégration, et configuration TypeScript propre.
 
 ## Stack technique
-- Node.js 18+  
-- TypeScript  
-- Express  
-- Jest pour les tests unitaires  
-- Supertest pour les tests d’intégration  
+
+- Node.js 18+
+- TypeScript
+- Express
+- Jest pour les tests unitaires
+- Supertest pour les tests d’intégration
 - ESLint + Prettier pour le formatage et la qualité du code
 
 ## Installation
@@ -47,15 +49,18 @@ L’API sera disponible sur http://localhost:3000.
 | POST    | /todos  | Crée un nouveau todo (body: `{ title: string }`) |
 
 ## Tests
+
 ### Tests unitaires
 
 ```bash
-npm run test 
+npm run test
 ```
+
 - Tests du service Todo (src/services/todo.service.ts)
 - Vérifie la logique métier indépendante d’Express
 
 ### Tests d'intégrations
+
 - Utilisation de Supertest pour tester les routes /todos
 - Vérifie les réponses HTTP et le flux complet controller → service
 
@@ -72,10 +77,20 @@ src/
 └─ server.ts       # Point d’entrée serveur
 ```
 
+## Variables d'environnement
+
+Le projet utilise **dotenv** pour gérer les variables d'environnement.
+
+### Exemple de fichier `.env`
+
+```env
+PORT=3000
+```
+
+- `PORT` : le port sur lequel le serveur Express écoute (par défaut 3000 si non défini).
+
 ## Prochaines améliorations possibles
 
 - Ajout d’une base de données (Prisma + PostgreSQL)
 - Authentification (JWT)
 - Middleware global pour la gestion centralisée des erreurs
-
-
