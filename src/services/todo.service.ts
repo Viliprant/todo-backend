@@ -1,0 +1,15 @@
+import { Todo } from '../models/todo.model';
+
+let todos: Todo[] = [];
+
+export const getTodos = (): Todo[] => todos;
+
+export const addTodo = (title: string): Todo => {
+  const newTodo: Todo = {
+    id: todos.length + 1,
+    title,
+    completed: false,
+  };
+  todos.push(newTodo);
+  return newTodo;
+};
