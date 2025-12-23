@@ -1,14 +1,16 @@
 import express from 'express';
 import todoRoutes from './routes/todo.routes';
+import morgan from 'morgan';
+import { errorHandler } from './middlewares/errorHandler';
 
 const app = express();
+
+app.use(morgan('dev'));
 
 app.use(express.json());
 
 app.use('/todos', todoRoutes);
 
-app.get('/', (_req, res) => {
-  res.status(200).json({ status: 'ok' });
-});
+app.use(errorHandler);
 
 export default app;

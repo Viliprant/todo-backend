@@ -93,4 +93,3 @@ PORT=3000
 
 - Ajout d’une base de données (Prisma + PostgreSQL)
 - Authentification (JWT)
-- Middleware global pour la gestion centralisée des erreurs
