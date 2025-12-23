@@ -38,7 +38,7 @@ npm run build
 npm start
 ```
 
-L’API sera disponible sur http://localhost:3000.
+L’API sera disponible sur http://localhost:3000 par défaut.
 
 ## Endpoints principaux
 
