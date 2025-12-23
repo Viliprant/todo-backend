@@ -42,11 +42,10 @@ L’API sera disponible sur http://localhost:3000.
 
 ## Endpoints principaux
 
-| Méthode | Route   | Description                                      |
-| ------- | ------- | ------------------------------------------------ |
-| GET     | /health | Vérifie que le serveur est en ligne              |
-| GET     | /todos  | Récupère la liste des todos                      |
-| POST    | /todos  | Crée un nouveau todo (body: `{ title: string }`) |
+| Méthode | Route  | Description                                      |
+| ------- | ------ | ------------------------------------------------ |
+| GET     | /todos | Récupère la liste des todos                      |
+| POST    | /todos | Crée un nouveau todo (body: `{ title: string }`) |
 
 ## Tests
 
@@ -68,6 +67,7 @@ npm run test
 
 ```bash
 src/
+├─ __test__/       # Définition des tests
 ├─ controllers/    # Gestion des requêtes HTTP
 ├─ routes/         # Définition des routes
 ├─ services/       # Logique métier
