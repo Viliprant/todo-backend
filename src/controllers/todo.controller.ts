@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { getTodos, addTodo } from '../services/todo.service';
-import { getErrorMessage } from '../utils/errorhandler';
+import { getErrorMessage } from '../utils/errorHandler';
 
 export const getAllTodos = (_req: Request, res: Response) => {
   res.json(getTodos());
