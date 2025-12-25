@@ -69,10 +69,10 @@ npm run test
 src/
 ├─ __test__/       # Définition des tests
 ├─ controllers/    # Gestion des requêtes HTTP
+├─ middlewares/    # Gestion des requêtes HTTP
+├─ models/         # Interfaces / modèles de données
 ├─ routes/         # Définition des routes
 ├─ services/       # Logique métier
-├─ models/         # Interfaces / modèles de données
-├─ utils/          # Fonctions utilitaires (ex: gestion erreurs)
 ├─ app.ts          # Configuration de l’API
 └─ server.ts       # Point d’entrée serveur
 ```
@@ -85,9 +85,11 @@ Le projet utilise **dotenv** pour gérer les variables d'environnement.
 
 ```env
 PORT=3000
+JWT_SECRET=monsupersecret
 ```
 
 - `PORT` : le port sur lequel le serveur Express écoute (par défaut 3000 si non défini).
+- `JWT_SECRET` : secret pour le token (par défaut 'monsupersecret' si non défini).
 
 ## Prochaines améliorations possibles
 
