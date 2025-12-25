@@ -18,7 +18,7 @@ app.use(limiter);
 app.use(helmet());
 app.use(morgan('dev'));
 
-app.use(express.json());
+app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/todos', authHandler, todoRoutes);
