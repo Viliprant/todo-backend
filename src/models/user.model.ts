@@ -10,3 +10,10 @@ export interface SafeUser {
   email: string;
   token: string;
 }
+
+export interface JwtPayload {
+  id: string;
+  email: string;
+  iat: number;
+  exp: number;
+}

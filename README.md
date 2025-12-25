@@ -92,4 +92,3 @@ PORT=3000
 ## Prochaines améliorations possibles
 
 - Ajout d’une base de données (Prisma + PostgreSQL)
-- Authentification (JWT)
