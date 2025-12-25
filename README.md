@@ -93,4 +93,7 @@ JWT_SECRET=monsupersecret
 
 ## Prochaines améliorations possibles
 
+- Ajouter de la pagination
+- Lier les todo à un utilisateur
+- Créer les rôles : utilisateur / admin
 - Ajout d’une base de données (Prisma + PostgreSQL)
