@@ -9,6 +9,10 @@ describe('Todo Service', () => {
     expect(todo.completed).toBe(false);
   });
 
+  it('should throw an error if title is missing', () => {
+    expect(() => addTodo('')).toThrow('Title is missing');
+  });
+
   it('should return all todos', () => {
     addTodo('Test todo');
     const todos = getTodos();

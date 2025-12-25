@@ -1,6 +1,6 @@
-import { Todo } from '../models/todo.model';
+import Todo from '../models/todo.model';
 
-let todos: Todo[] = [];
+const todos: Todo[] = [];
 
 export const getTodos = (): Todo[] => todos;
 
@@ -16,5 +16,5 @@ export const addTodo = (title: string): Todo => {
 };
 
 export const resetTodos = (): void => {
-  todos = [];
+  todos.length = 0;
 };
