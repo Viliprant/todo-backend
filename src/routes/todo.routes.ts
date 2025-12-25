@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getAllTodos, createTodo } from '../controllers/todo.controller';
+import TodoController from '../controllers/todo.controller';
 
-const router = Router();
+const todoRoutes = Router();
 
-router.get('/', getAllTodos);
-router.post('/', createTodo);
+todoRoutes.get('/', TodoController.getAllTodos);
+todoRoutes.post('/', TodoController.createTodo);
 
-export default router;
+export default todoRoutes;

@@ -1,4 +1,4 @@
-import { login, register, verifyToken } from '../services/auth.service';
+import AuthService from '../services/auth.service';
 import { addUser, getUserByEmail, resetUsers } from '../services/user.service';
 
 describe('Auth service', () => {
@@ -8,7 +8,7 @@ describe('Auth service', () => {
     const email = 'test@test.com';
     const password = 'superpassword';
     const addedUser = await addUser(email, password);
-    const foundUser = await login(email, password);
+    const foundUser = await AuthService.login(email, password);
 
     expect(foundUser).toMatchObject({
       id: addedUser.id,
@@ -21,7 +21,7 @@ describe('Auth service', () => {
     const email = 'test@test.com';
     const password = 'superpassword';
 
-    expect(login(email, password)).rejects.toThrow(
+    expect(AuthService.login(email, password)).rejects.toThrow(
       `L'utilisateur n'existe pas : [${email}].`,
     );
   });
@@ -32,7 +32,7 @@ describe('Auth service', () => {
     const badPassword = 'superpasswordp';
     await addUser(email, password);
 
-    expect(login(email, badPassword)).rejects.toThrow(
+    expect(AuthService.login(email, badPassword)).rejects.toThrow(
       `Le mot de passe n'est pas le même : [${badPassword}].`,
     );
   });
@@ -41,7 +41,7 @@ describe('Auth service', () => {
     const email = 'test@test.com';
     const password = 'superpassword';
 
-    await register(email, password);
+    await AuthService.register(email, password);
 
     const foundUser = getUserByEmail(email);
 
@@ -52,8 +52,8 @@ describe('Auth service', () => {
     const email = 'test@test.com';
     const password = 'superpassword';
     await addUser(email, password);
-    const foundUser = await login(email, password);
-    const decoded = verifyToken(foundUser.token);
+    const foundUser = await AuthService.login(email, password);
+    const decoded = AuthService.verifyToken(foundUser.token);
 
     expect(decoded).toBeDefined();
   });
