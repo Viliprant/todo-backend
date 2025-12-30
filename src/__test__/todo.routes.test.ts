@@ -36,6 +36,15 @@ describe('Todo Routes', () => {
       .send({});
 
     expect(res.statusCode).toBe(400);
+    expect(res.body).toMatchObject({
+      message: 'Validation error',
+      errors: [
+        {
+          path: 'title',
+          message: "Le titre n'est pas renseigné ou est invalide.",
+        },
+      ],
+    });
   });
 
   it('POST /todos should return empty array', async () => {
