@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getTodos, addTodo } from '../services/todo.service';
+import { CreateTodoDto } from '../schemas/todo.schema';
 
 export default class TodoController {
   static getAllTodos = (_req: Request, res: Response) => {
@@ -7,8 +8,9 @@ export default class TodoController {
   };
 
   static createTodo = (req: Request, res: Response) => {
-    const { title } = req.body;
+    const { title }: CreateTodoDto = req.body;
     const todo = addTodo(title);
+
     res.status(201).json(todo);
   };
 }

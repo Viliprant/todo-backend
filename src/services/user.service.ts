@@ -28,9 +28,6 @@ export const addUser = async (
   email: string,
   password: string,
 ): Promise<User> => {
-  if (!email || !password)
-    throw new Error('Email et/ou mot de passe manquant.');
-
   const isAlreadyRegistered = checkExistingEmail(email);
   if (isAlreadyRegistered)
     throw new Error(`L'adresse mail est déjà utilisé : [${email}].`);

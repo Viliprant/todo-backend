@@ -6,9 +6,6 @@ import jwt from 'jsonwebtoken';
 
 export default class AuthService {
   static async login(email: string, password: string): Promise<SafeUser> {
-    if (!email || !password)
-      throw new Error('Email et/ou mot de passe manquant.');
-
     const foundUser: User = getUserByEmail(email);
     const isMatching = await bcrypt.compare(password, foundUser.password);
 
